@@ -5,11 +5,13 @@
  * Return: Always 0 (success)
 */
 int main(void)
-{       
-        for(int i=0; i<10; i++)
-        {       
-                putchar('0' + i);
-		if(i==9)
+{
+	int i;
+
+	for (i = 0; i < 10; i++)
+	{
+		putchar('0' + i);
+		if (i == 9)
 		{
 			continue;
 		}
@@ -18,8 +20,7 @@ int main(void)
 			putchar(',');
 			putchar(' ');
 		}
-        }       
-        putchar('\n');
-        
-        return(0);
-}   
+	}
+	putchar('\n');
+	return(0);
+}
