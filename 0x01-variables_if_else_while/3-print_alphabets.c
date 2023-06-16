@@ -5,16 +5,17 @@
  * Return: Always 0 (success)
 */
 int main(void)
-{       
-        for(int i=0; i<26; i++)
-        {       
-                putchar('a' + i);
-        }
- 	for(int i=0; i<26; i++)
+{
+	int i;
+
+	for (i = 0; i < 26; i++)
+	{
+		putchar('a' + i);
+	}
+ 	for (i = 0; i < 26; i++)
 	{
 		putchar('A' + i);
 	}	
-        putchar('\n');
-        
-        return(0);
+	putchar('\n');
+	return (0);
 }   
