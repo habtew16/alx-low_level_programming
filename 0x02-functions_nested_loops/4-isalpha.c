@@ -1,7 +1,7 @@
 #include "main.h"
 #include <ctype.h>
 /**
- * _islower - checks if the input is lower
+ * _isalpha - checks if the input is alphabet
  * @c: input paramater
  * Return: 1 if true
  * 0 if false
