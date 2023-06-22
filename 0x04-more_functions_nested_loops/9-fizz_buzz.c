@@ -1,9 +1,14 @@
 #include <stdio.h>
 
-int main() {
+/**
+ * main - main entry
+ * Return: 0
+*/
+int main(void)
+{
 	int i;
 
-	for(i = 1; i <= 100; i++)
+	for (i = 1; i <= 100; i++)
 	{
 		if (i % 15 == 0)
 		{
@@ -22,5 +27,5 @@ int main() {
 			printf("%i ", i);
 		}
 	}
-	return 0;
+	return (0);
 }
