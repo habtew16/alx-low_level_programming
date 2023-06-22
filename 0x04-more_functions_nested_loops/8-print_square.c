@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * prinnt_square - entry point
+ * print_square - entry point
  * prints #
  * @size: size of # to be printed
 */
