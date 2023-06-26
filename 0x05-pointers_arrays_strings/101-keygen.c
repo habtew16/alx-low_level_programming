@@ -4,20 +4,25 @@
 
 #define PASSWORD_LENGTH 8
 
-char generateRandomChar() {
-	return (rand() % 94) + 33;
+char generateRandomChar(void)
+{
+	return ((rand() % 94) + 33);
 }
 
 void generateRandomPassword(char *password)
 {
-	for (int i = 0; i < PASSWORD_LENGTH; i++)
+	int i;
+
+
+	for (i = 0; i < PASSWORD_LENGTH; i++)
 	{
 		password[i] = generateRandomChar();
 	}
 	password[PASSWORD_LENGTH] = '\0';
 }
 
-int main() {
+int main(void)
+{
 	srand(time(NULL));
 
 	char password[PASSWORD_LENGTH + 1];
@@ -26,6 +31,6 @@ int main() {
 
 	printf("Random password: %s\n", password);
 
-	return 0;
+	return (0);
 }
 
