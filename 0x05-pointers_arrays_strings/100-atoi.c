@@ -7,6 +7,7 @@
  * Return: return integer if string conntians integer
  * or return 0 if string doesn't contain any number
  */
+
 int _atoi(char *s)
 {
 	int i;
@@ -15,9 +16,9 @@ int _atoi(char *s)
 	int d;
 	int num;
 
+	num = 0;
 	np = 0;
 	d = 1;
-	num = 0;
 
 	for (i = 0; i < _strlen(s); i++)
 	{
@@ -34,17 +35,17 @@ int _atoi(char *s)
 	}
 	while (c > 0)
 	{
-		num = num + ((s[i - 1] - '0') * d);
-		i = i - 1;
-		c = c - 1;
-		d = d * 10;
+		num += ((s[i - 1] - '0') * d);
+		i--;
+		c--;
+		d *= 10;
 	}
 	if (np >= 0)
 	{
-		num = num * 1;
+		num *= 1;
 	} else
 	{
-		num = num - 1;
+		num *= -1;
 	}
 	return (num);
 }
