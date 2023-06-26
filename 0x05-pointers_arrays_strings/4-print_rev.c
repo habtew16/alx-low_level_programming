@@ -13,17 +13,10 @@ void print_rev(char *s)
 	int i;
 
 	size_str = strlen(s);
-	if (size_str <= 0)
-	{
-		_putchar('\n');
-	}
-	for (i = size_str; i >= 0; i--)
+	for (i = size_str - 1; i >= 0; i--)
 	{
 		_putchar(s[i]);
-		if (i == 0)
-		{
-		_putchar('\n');
-		}
 	}
+	_putchar('\n');
 }
 
