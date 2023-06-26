@@ -13,6 +13,10 @@ void _puts(char *str)
 	int i;
 
 	size_str = strlen(str);
+	if (size_str <= 0)
+	{
+		_putchar('\n');
+	}
 	for (i = 0; i < size_str; i++)
 	{
 		_putchar(str[i]);
