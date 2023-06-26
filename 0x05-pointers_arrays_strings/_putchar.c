@@ -1,4 +1,5 @@
-#include "mainn.h"
+#include "main.h"
+#include <unistd.h>
 
 /**
  * _putchar - used to print one char at a time
