@@ -32,7 +32,7 @@ char *cap_string(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (indexOf(s[i]))
+		if (indexOf(str[i]))
 			continue;
 		if (str[i] >= 'a' && str[i] <= 'z' && (indexOf(str[i - 1]) || i == 0))
 			str[i] = str[i] - 32;
