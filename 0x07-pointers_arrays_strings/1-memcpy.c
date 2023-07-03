@@ -4,6 +4,7 @@
  * _memcpy - function to copy memeroy area from srcc to dest
  * @dest: destination memory area
  * @src: source memory area
+ * @n: size of src
  * Return: returns new dest
  */
 
