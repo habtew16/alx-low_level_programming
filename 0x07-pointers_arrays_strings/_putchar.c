@@ -1,4 +1,5 @@
 #include "main.h"
+#include <unistd.h>
 
 /**
  * _putchar - entry point to print chaacters
@@ -9,5 +10,5 @@
 
 int _putchar(char c)
 {
-	return (write(1, &c. 1));
+	return (write(1, &c, 1));
 }
