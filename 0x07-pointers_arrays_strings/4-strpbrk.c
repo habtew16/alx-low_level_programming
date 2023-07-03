@@ -4,7 +4,7 @@
  * _strpbrk - function to search for string
  * @s: string of characters
  * @accept: string to be searched
- * Returm: returns 0 in sucess
+ * Return: returns 0 in sucess
 */
 
 
