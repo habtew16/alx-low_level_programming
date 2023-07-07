@@ -17,7 +17,13 @@ int main(int argC, char  *argV[])
 
 	coins = 0;
 
-	if (argC == 2)
+	if (argC != 2)
+	{
+		printf("Error\n");
+		return (1);
+	}
+
+	else
 	{
 
 		if (atoi(argV[1]) < 0)
@@ -48,8 +54,6 @@ int main(int argC, char  *argV[])
 			coins++;
 		}
 		printf("%d\n", coins);
-		return (0);
 	}
-	printf("Error\n");
-	return (1);
+	return (0);
 }
