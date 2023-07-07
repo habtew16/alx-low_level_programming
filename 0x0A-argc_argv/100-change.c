@@ -12,8 +12,12 @@
 
 int main(int argC, char  *argV[])
 {
+	int j;
+	int coins[5];
 	int num;
 	int result;
+
+	coins[5] = {25, 10, 5, 2, 1};
 
 	if (argC != 2)
 	{
@@ -30,25 +34,13 @@ int main(int argC, char  *argV[])
 		return (0);
 	}
 
-	while (num > 0)
+	for (j = 0; j < 5 && num >= 0; j++)
+	{
+		while (num >= coins[j])
 		{
-		if (num % 25 == 0)
-		{
-			num -= 25;
-		} else if (num % 10 == 0)
-		{
-			num -= 10;
-		} else if (num % 5 == 0)
-		{
-			num -= 5;
-		} else if (num % 2 == 0)
-		{
-			num -= 2;
-		} else
-		{
-			num--;
+			result++;
+			num -= coins[j];
 		}
-		result++;
 	}
 
 	printf("%d\n", result);
