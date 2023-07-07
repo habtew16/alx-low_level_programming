@@ -21,7 +21,7 @@ int main(int argC, char  *argV[])
 	{
 		if (strchr(argV[argC - 1], '-'))
 		{
-			printf("0\n");
+			printf("%d\n", 0);
 			return (1);
 		}
 
