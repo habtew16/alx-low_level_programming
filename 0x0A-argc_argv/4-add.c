@@ -13,30 +13,31 @@
 int main(int argC, char *argV[])
 {
 	int i;
+	int sum;
 
+	sum = 0;
 	if (argC == 1)
 	{
 		printf("%d\n", 0);
+		return (1);
 	}
+
 	else
 	{
-		int sum;
-
-		sum = 0;
 		for (i = 1; i < argC; i++)
 		{
-
-			if (!isdigit(*argV[i]))
+			if (isdigit(*argV[i]))
+			{
+				sum += atoi(argV[i]);
+			}
+			else
 			{
 				printf("Error\n");
 				return (1);
 			}
-			else
-			{
-				sum += atoi(argV[i]);
-			}
 		}
-		printf("%i\n", sum);
+		printf("%d\n", sum);
+		return (0);
 	}
 
 	return (0);
