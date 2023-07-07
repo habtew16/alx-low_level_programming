@@ -19,7 +19,8 @@ int main(int argC, char  *argV[])
 
 	if (argC == 2)
 	{
-		if (strchr(argV[argC - 1], '-'))
+
+		if (atoi(argV[1]) < 0)
 		{
 			printf("%d\n", 0);
 			return (1);
