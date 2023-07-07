@@ -31,14 +31,17 @@ int main(int argC, char  *argV[])
 
 		if (atoi(argV[1]) < 0)
 		{
-			printf("o\n");
+			printf("%d\n", 0);
 		}
-		money = atoi(argV[1]);
+		else
+		{
+			money = atoi(argV[1]);
 
-		result = calc_money(money, coins);
+			result = calc_money(money, coins);
 
-		printf("%d\n", result);
-		return (0);
+			printf("%d\n", result);
+			return (0);
+		}
 	}
 	return (0);
 }
@@ -49,6 +52,7 @@ int main(int argC, char  *argV[])
  * @coins: calculated conis
  * Return: returns coins
 */
+
 
 int calc_money(int money, int coins)
 {
