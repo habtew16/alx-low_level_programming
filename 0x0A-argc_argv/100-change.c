@@ -32,6 +32,7 @@ int main(int argC, char  *argV[])
 		if (atoi(argV[1]) < 0)
 		{
 			printf("%d\n", 0);
+			return (1);
 		}
 		else
 		{
@@ -74,7 +75,7 @@ int calc_money(int money, int coins)
 		{
 			money -= 2;
 		}
-		else if(money % 1 == 0)
+		else
 		{
 			money--;
 		}
