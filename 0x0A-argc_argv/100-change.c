@@ -3,7 +3,7 @@
 #include <string.h>
 
 /**
- * main - entry point
+ * main - entry point to print number of changes
  * @argC: length of arguments
  * @argV: argv is collection of arguments
  * Return: 0 if success
@@ -12,8 +12,8 @@
 
 int main(int argC, char  *argV[])
 {
-	int j;
-	int num;
+	int i;
+	int money;
 	int result;
 
 	int coins[5] = {25, 10, 5, 2, 1};
@@ -24,21 +24,21 @@ int main(int argC, char  *argV[])
 		return (1);
 	}
 
-	num = atoi(argV[1]);
+	money = atoi(argV[1]);
 	result = 0;
 
-	if (num < 0)
+	if (money < 0)
 	{
 		printf("0\n");
 		return (0);
 	}
 
-	for (j = 0; j < 5 && num >= 0; j++)
+	for (i = 0; i < 5 && money >= 0; i++)
 	{
-		while (num >= coins[j])
+		while (money >= coins[i])
 		{
 			result++;
-			num -= coins[j];
+			money -= coins[i];
 		}
 	}
 
