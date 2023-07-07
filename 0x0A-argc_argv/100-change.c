@@ -26,24 +26,15 @@ int main(int argC, char  *argV[])
 		return (1);
 	}
 
-	else
+	money = atoi(argV[1]);
+
+	if (money < 0)
 	{
-
-		if (atoi(argV[1]) < 0)
-		{
-			printf("0\n");
-			return (0);
-		}
-		else
-		{
-			money = atoi(argV[1]);
-
-			result = calc_money(money, coins);
-
-			printf("%d\n", result);
-			return (0);
-		}
+		printf("0\n");
+		return (0);
 	}
+	result = calc_money(money, coins);
+	printf("%d\n", result);
 	return (0);
 }
 
