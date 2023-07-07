@@ -31,7 +31,7 @@ int main(int argC, char  *argV[])
 
 		if (atoi(argV[1]) < 0)
 		{
-			printf("%d\n", 0);
+			printf("0\n");
 			return (1);
 		}
 		else
