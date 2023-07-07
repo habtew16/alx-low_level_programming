@@ -74,7 +74,7 @@ int calc_money(int money, int coins)
 		{
 			money -= 2;
 		}
-		else
+		else if(money % 1 == 0)
 		{
 			money--;
 		}
