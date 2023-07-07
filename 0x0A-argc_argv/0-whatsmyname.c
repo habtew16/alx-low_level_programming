@@ -3,7 +3,7 @@
 
 /**
  * main - entry point
- * @argc:  unused variable which is length of argv
+ * @argC:  unused variable which is length of argv
  * @argV: array of strings
  * Return: 0 on success
 */
