@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-int calc_money(int money, int coins);
-
 /**
  * main - entry point
  * @argC: length of arguments
@@ -14,11 +12,8 @@ int calc_money(int money, int coins);
 
 int main(int argC, char  *argV[])
 {
-	int coins;
-	int money;
+	int num;
 	int result;
-
-	coins = 0;
 
 	if (argC != 2)
 	{
@@ -26,51 +21,36 @@ int main(int argC, char  *argV[])
 		return (1);
 	}
 
-	money = atoi(argV[1]);
+	num = atoi(argV[1]);
+	result = 0;
 
-	if (money < 0)
+	if (num < 0)
 	{
 		printf("0\n");
 		return (0);
 	}
-	result = calc_money(money, coins);
+
+	while (num > 0)
+		{
+		if (num % 25 == 0)
+		{
+			num -= 25;
+		} else if (num % 10 == 0)
+		{
+			num -= 10;
+		} else if (num % 5 == 0)
+		{
+			num -= 5;
+		} else if (num % 2 == 0)
+		{
+			num -= 2;
+		} else
+		{
+			num--;
+		}
+		result++;
+	}
+
 	printf("%d\n", result);
 	return (0);
-}
-
-/**
- * calc_money -calculates changes
- * @money: money assed as argument
- * @coins: calculated conis
- * Return: returns coins
-*/
-
-
-int calc_money(int money, int coins)
-{
-	while (money > 0)
-	{
-		if (money % 25 == 0)
-		{
-			money -= 25;
-		}
-		else if (money % 10 == 0)
-		{
-			money -= 10;
-		}
-		else if (money % 5 == 0)
-		{
-			money -= 5;
-		}
-		else if (money % 2 == 0)
-		{
-			money -= 2;
-		}
-		else
-		{
-			money--;
-		}
-		coins++;
-	}
-	return (coins);
 }
