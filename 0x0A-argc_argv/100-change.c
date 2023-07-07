@@ -13,11 +13,10 @@
 int main(int argC, char  *argV[])
 {
 	int j;
-	int coins[5];
 	int num;
 	int result;
 
-	coins[5] = {25, 10, 5, 2, 1};
+	int coins[5] = {25, 10, 5, 2, 1};
 
 	if (argC != 2)
 	{
