@@ -1,34 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#define UNUSED(x) (void)(x)
+
+int StringCheck(char *s);
+
 
 /**
- * main - entry point for functions
- * @argC: length for argV
- * @argV: collection of arguments
- * Return: 0 if success
- * 1 not success
+ * main - entry point
+ * @argc: arguments length
+ * @argv: collection of arguments
+ * Return: 0 sucess 1 fail
 */
 
-int main(int argC, char *argV[])
+
+int main(int argc, char  *argv[])
 {
 	int i;
-	int sum;
+	int sum = 0;
 
-	sum = 0;
-	if (argC == 1)
+	if (argc > 1)
 	{
-		printf("%d\n", 0);
-		return (1);
-	}
-
-	else
-	{
-		for (i = 1; i < argC; i++)
+		for (i = 1; i < argc; i++)
 		{
-			if (isdigit(*argV[i]))
+			if (StringCheck(argv[i]))
 			{
-				sum += atoi(argV[i]);
+				sum += atoi(argv[i]);
 			}
 			else
 			{
@@ -37,7 +34,33 @@ int main(int argC, char *argV[])
 			}
 		}
 		printf("%d\n", sum);
+		return (0);
+	}
+	else
+	{
+		printf("%d\n", 0);
+		return (1);
 	}
 
-	return (0);
+}
+
+/**
+ * StringCheck - checks string
+ * @s: string to check
+ * Return: boolean
+ */
+
+int StringCheck(char *s)
+{
+	int i;
+
+	i = 0;
+	for (; s[i] != '\0'; i++)
+	{
+		if (!isdigit(s[i]))
+		{
+			return (0);
+		}
+	}
+	return (1);
 }
