@@ -8,41 +8,41 @@
  * Return: rutrns address
 */
 
+
 char *argstostr(int ac, char **av)
 {
-	int len;
+	int size;
+	char *s;
 	int i;
 	int j;
 	int k;
-	char *ptr;
 
-	if (ac == 0 || av == 0)
+	if (ac == 0 || av == NULL)
 		return (NULL);
 
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
-			len++;
+			size++;
 	}
 
-	len += (ac + 1);
-
-	ptr = malloc(sizeof(char) * len);
-	if (ptr == NULL)
+	size += (ac + 1);
+	s = malloc(sizeof(char) * size);
+	if (s == NULL)
 		return (NULL);
 	k = 0;
 	for (i = 0; i < ac; i++)
 	{
 		for (j = 0; av[i][j] != '\0'; j++)
 		{
-			ptr[k] = av[i][j];
+			s[k] = av[i][j];
 			k++;
 		}
-		ptr[k] = '\n';
+		s[k] = '\n';
 		k++;
 	}
 
-	ptr[k] = '\0';
+	s[k] = '\0';
 
-	return (ptr);
+	return (s);
 }
