@@ -4,14 +4,14 @@
 /**
  * init_dog - function to print charachter of dog
  * @d: address of the dog properties
- * @age: the age of dog
  * @name: name of the dog
+ * @age: age of the dog
  * @owner: the owner of the dog
 */
 
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	if(d != NULL)
+	if (d != NULL)
 	{
 		d->name = name;
 		d->age = age;
