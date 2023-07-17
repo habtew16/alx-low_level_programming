@@ -4,6 +4,7 @@
 /**
  * init_dog - function to print charachter of dog
  * @d: address of the dog properties
+ * @age: the age of dog
  * @name: name of the dog
  * @owner: the owner of the dog
 */
