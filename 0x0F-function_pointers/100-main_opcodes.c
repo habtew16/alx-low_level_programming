@@ -16,7 +16,7 @@ void print_opcodes(int numBytes)
 
 	for (i = 0; i < numBytes; i++)
 	{
-		printf("%02x", mainPtr[i]);
+		printf("%02x ", mainPtr[i]);
 	}
 	printf("\n");
 }
