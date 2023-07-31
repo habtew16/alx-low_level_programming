@@ -13,6 +13,10 @@ int pop_listint(listint_t **head)
 	int popped;
 	listint_t *current;
 
+	if (*head == NULL)
+		return (0);
+
+
 	current = *head;
 
 	popped = current->n;
