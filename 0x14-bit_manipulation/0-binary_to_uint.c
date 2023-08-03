@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * binary_to_unit - function to convert binnray yo int
+ * binary_to_uint - function to convert binnray yo int
  * @b: binnary string
  * Return: returns unsigned long int equivalent to
  * binnray givenn
