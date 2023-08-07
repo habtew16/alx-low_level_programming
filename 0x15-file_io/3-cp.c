@@ -59,15 +59,13 @@ int copy_file(const char *src_file, const char *dest_file)
 
 int main(int ac, char **av)
 {
-	int result;
-
 	if (ac != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		return (97);
 	}
 
-	result = copy_file(av[1], av[2]);
-	return (result);
+	copy_file(av[1], av[2]);
+	return (0);
 }
 
