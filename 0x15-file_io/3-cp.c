@@ -1,60 +1,73 @@
 #include "main.h"
 
-
 /**
- * main - main entry to copy file's content to another file
- * @ac: total number of arguments
- * @av: total array of arguments
- * Return: 0 on success
- * else exit value on failure
- */
-
-
-int main(int ac, char **av)
+* copy_file - Copy the content from one file to another.
+* @src_file: The source file from which content is copied.
+* @dest_file: The destination file where content is written.
+* Return: 0 on success, exit value on failure.
+*/
+int copy_file(const char *src_file, const char *dest_file)
 {
 	int fdFrum, fdToo, wrote, readed;
 	char buff[1024];
 
-	if (ac != 3)
-	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
-	fdFrum = open(av[1], O_RDONLY);
+	fdFrum = open(src_file, O_RDONLY);
 	if (fdFrum == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
-		exit(98);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src_file);
+		return (98);
 	}
-	fdToo = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	fdToo = open(dest_file, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fdToo == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
-		exit(99);
+		close(fdFrum);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest_file);
+		return (99);
 	}
+
 	while ((readed = read(fdFrum, buff, 1024)) > 0)
 	{
 		wrote = write(fdToo, buff, readed);
 		if (wrote == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
-			exit(99);
+			close(fdFrum);
+			close(fdToo);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", dest_file);
+			return (99);
 		}
 	}
 	if (readed == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
-		exit(98);
+		close(fdFrum);
+		close(fdToo);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", src_file);
+		return (98);
 	}
-	if (close(fdFrum) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fdFrum);
-		exit(100);
-	}
-	if (close(fdToo) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", fdToo);
-		exit(100);
-	}
+	close(fdFrum);
+	close(fdToo);
 	return (0);
 }
+
+
+/**
+* main - Main entry to copy file's content to another file.
+* @ac: Total number of arguments.
+* @av: Total array of arguments.
+* Return: 0 on success, else exit value on failure.
+*/
+
+
+int main(int ac, char **av)
+{
+	int result;
+
+	if (ac != 3)
+	{
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		return (97);
+	}
+
+	result = copy_file(av[1], av[2]);
+	return (result);
+}
+
