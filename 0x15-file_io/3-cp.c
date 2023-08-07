@@ -64,8 +64,6 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		return (97);
 	}
-
-	copy_file(av[1], av[2]);
-	return (0);
+	return (copy_file(av[1], av[2]));
 }
 
