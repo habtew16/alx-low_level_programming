@@ -1,0 +1,5 @@
+# my first make file
+cc: gcc
+src: *.c
+all: school.c
+	$(cc) $(src) -o school
